@@ -11,7 +11,10 @@ class DashbordController extends Controller
     public function logincontrole(){
         // dd($test);
         // dd('nadi');
+
+        
         $user=Auth::user();
+        $user->attachRole('candidat');
        
     if ($user->hasRole('admin') ){
         $users = User::whereRoleIs( ['famille','candidat'])->orderBy('id','desc')->paginate("");
