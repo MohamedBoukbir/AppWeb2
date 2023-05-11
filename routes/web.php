@@ -1,7 +1,7 @@
 <?php
 use App\Http\Controllers\DashbordController;
 use App\Http\Controllers\CandidatController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\staff\StaffController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AnnonceController;
 use App\Http\Controllers\FamilleController;
@@ -72,7 +72,7 @@ require __DIR__.'/auth.php';
 ///// Route candidat////////////////////////////////////////////////////////////
 Route::middleware(['auth'])->group(function () {
 
-  Route::get('/candidat/home', [HomeController::class, 'index'])->name('home');
+  // Route::get('/candidat/home', [HomeController::class, 'index'])->name('home');
   Route::resource('candidats', CandidatController::class);
 
   // Route::get('/homehelppp/signin', function () {
@@ -84,7 +84,7 @@ Route::middleware(['auth'])->group(function () {
 ///// Route Admin////////////////////////////////////////////////////////////
 
 Route::middleware(['auth'])->group(function () {
-  Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
+  // Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
   Route::delete('admin/user/delete/{user}', [AdminController::class, 'destroy'])->name('admin.destroy');
   Route::get('/admin/home/{user}', [AdminController::class, 'edituser'])->name('admin.edit-user');
 
@@ -129,7 +129,7 @@ Route::middleware(['auth'])->group(function () {
 
 Route::middleware(['auth'])->group(function () {
 
-  Route::get('/famille/home', [HomeController::class, 'familleHome'])->name('famille.home');
+  // Route::get('/famille/home', [HomeController::class, 'familleHome'])->name('famille.home');
   Route::resource('familles', FamilleController::class);
   Route::resource('annonces', AnnonceController::class);
 });
@@ -155,3 +155,9 @@ Route::get('/my-account-saves', function () {
   return view('front.liked');
 })->name('account-saved-profiles');
 
+
+////////////////////////////////////////staff ///////////////////////////
+Route::group(['prefix' => 'admin', 'middleware' => ['auth','role:admin']], function() {
+  Route::resource('staff', StaffController::class);
+  // Route::get('/manage', ['middleware' => ['permission:manage-admins'], 'uses' => 'AdminController@manageAdmins']);
+});

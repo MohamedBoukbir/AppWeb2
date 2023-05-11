@@ -13,7 +13,7 @@
                 <div class="col-xl-6 col-sm-12 col-12">
                     <div class="breadcrumb-path ">
                         <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ route('admin.home') }}"><img
+                            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><img
                                         src="{{ asset('img/dash.png') }}" class="mr-3" alt="breadcrumb" />Home</a>
                             </li>
                             <li class="breadcrumb-item active">Dashboard</li>

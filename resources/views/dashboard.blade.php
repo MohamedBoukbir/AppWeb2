@@ -269,7 +269,7 @@
                                     <span>Manage</span></a>
                             </li>
                             <li>
-                                <a href="settings.html"><img src="{{ asset('img/settings.svg') }}"
+                                <a href="{{route('staff.index')}}"><img src="{{ asset('img/settings.svg') }}"
                                         alt="sidebar_img"><span>Settings</span></a>
                             </li>
                             <li>
