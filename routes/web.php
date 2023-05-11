@@ -24,6 +24,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
+//////////////////////////front ///////////////////////////
 Route::get('/', function () {
     return view('front.welcome');
   });
@@ -32,9 +33,9 @@ Route::get('/homehelp/signup', function () {
   return view('front.signup');
 })->name('signup');
 
-Route::get('/homehelp/user', function () {
-  return view('front.selectuser');
-})->name('select-user');
+// Route::get('/homehelp/user', function () {
+//   return view('front.selectuser');
+// })->name('select-user');
 
 
 Route::get('/homehelp/signin', function () {
@@ -43,7 +44,8 @@ Route::get('/homehelp/signin', function () {
 
 
 
-
+Route::get('/homehelp/user', [DashbordController::class, 'selectUser'])->name('select-user');
+Route::get('/homehelp/{user}', [DashbordController::class, 'userAtacher'])->name('userAtacher');
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
@@ -54,6 +56,7 @@ Route::get('/homehelp/signin', function () {
 // })->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/dashboard', [DashbordController::class,'logincontrole'])->name('dashboard');
 
+////////////////////////end front /////////////////////////////////////////
 
 Route::group(['prefix' => 'admin'], function() {
     Route::get('/candidats', [CandidatController::class,'index'])->name('candidat');

@@ -33,4 +33,18 @@ class DashbordController extends Controller
         // dd(Auth::user());
     }
      }
+
+     public function selectUser(){
+        $user=[
+            'famille'=>'famille',
+            'candidat'=>'candidat',
+        ];
+        return view('front.selectuser', compact('user'));
+     }
+
+
+  public function userAtacher(){
+
+  }
+
 }
