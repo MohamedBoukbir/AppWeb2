@@ -45,7 +45,7 @@ Route::get('/homehelp/signin', function () {
 
 
 Route::get('/homehelp/user', [DashbordController::class, 'selectUser'])->name('select-user');
-Route::get('/homehelp/{user}', [DashbordController::class, 'userAtacher'])->name('userAtacher');
+Route::get('/homehelp/{user}', [DashbordController::class, 'userAtacher'])->name('useratacher');
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');

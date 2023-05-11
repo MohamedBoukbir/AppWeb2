@@ -36,15 +36,14 @@ class DashbordController extends Controller
 
      public function selectUser(){
         $user=[
-            'famille'=>'famille',
-            'candidat'=>'candidat',
+            'users'=>'candidat',
         ];
         return view('front.selectuser', compact('user'));
      }
 
 
-  public function userAtacher(){
-
+  public function userAtacher($user){
+    // dd($user);
+    return view('front.signup',compact('user'));
   }
-
 }

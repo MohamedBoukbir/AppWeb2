@@ -88,6 +88,12 @@
                                 <header>Signup</header>
                                 <form action="{{ route('register') }}" method="POST">
                                     @csrf
+                                    {{-- <fieldset disabled> --}}
+                                    <div class="field input-field" style="display: none;">
+                                        <input id="user"  name="user" type="text" class="input text text-muted"  :value="old('{{$user}}')"  value="{{$user}}">
+
+                                    </div>
+                                  {{-- </fieldset> --}}
                                     <div class="field input-field">
                                         <input id="username" type="text" placeholder="Username" class="input @error('username') is-invalid @enderror" name="username" :value="old('username')" required autocomplete="username" autofocus>
                                         @error('username')
@@ -140,6 +146,8 @@
                                     <span>Login with Google</span>
                                 </a>
                             </div>
+                         
+                            
                         </div>
                     </section>
                 </div>
