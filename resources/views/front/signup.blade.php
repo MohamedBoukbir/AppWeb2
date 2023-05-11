@@ -89,7 +89,7 @@
                                 <form action="{{ route('register') }}" method="POST">
                                     @csrf
                                     {{-- <fieldset disabled> --}}
-                                    {{-- <div class="field input-field" style="display: none;">
+                                    <div class="field input-field" style="display: none;">
                                         <input id="user"  name="user" type="text" class="input text text-muted"  :value="old('{{$user}}')"  value="{{$user}}">
 
                                     </div> --}}
