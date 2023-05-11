@@ -109,6 +109,8 @@ active
                                         ><a class="action_label5" href="{{ route('admin.edit.candidat',$candidat->id) }}"
                                           >Edit <i data-feather="edit"></i></a
                                       ></label>
+                                      
+
                                       <label
                                         ><a
                                           class="action_label4"
