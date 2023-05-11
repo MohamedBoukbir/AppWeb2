@@ -292,6 +292,7 @@
             <div class="dashboard">
                 <div class="dashboard-card">
                     <div>
+                        <a href="{{ route('famille.regester') }}">nadi nadi</a>
                         <h2 class="dashboard-card-title"> Hi {{Auth::user()->username }}</h2>
                         <p class="dashboard-card-text">
                             {{ __('Welcome to your personal dashboard! Here you can manage your searches and job posting.') }}

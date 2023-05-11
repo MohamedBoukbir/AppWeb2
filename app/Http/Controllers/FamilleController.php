@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class FamilleController extends Controller
 {
@@ -120,5 +121,16 @@ public function store(Request $request)
         return redirect()->back()->with('success', 'famille  a été bien supremer !!');
     }
 
+
+
+    /////// complete registring ////////////////////////
+    public function regesterFamille(){
+        // dd('rfrjhfjrjh');
+        return view('familles.regester-famille');
+    }
+
+    public function rederectToFamille(){
+        return view('front.dashboard-account');
+    }
 
 }

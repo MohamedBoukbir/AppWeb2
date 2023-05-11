@@ -99,6 +99,11 @@ Route::middleware(['auth'])->group(function () {
   ///////afficher Famille/////////////////
   Route::get('admin/user/famille', [AdminController::class, 'indexfamille'])->name('admin.famille');
 
+            /////////////////////////// fineshed regestring famille///////////////////////////
+            Route::get('complete/regestre/famille', [FamilleController::class, 'regesterFamille'])->name('famille.regester');
+            Route::get('/dashbord/famille', [FamilleController::class, 'rederectToFamille'])->name('registration.famille.success');
+
+            /////////////// end fineshed regestring famille///////////////////////////
   // add famille
   Route::get('admin/user/add-famille', [AdminController::class, 'createfamille'])->name('admin.add.famille');
   Route::post('admin/user/famille', [AdminController::class, 'storefamille'])->name('Storefamille');
