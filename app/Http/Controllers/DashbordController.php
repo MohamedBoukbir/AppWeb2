@@ -14,7 +14,7 @@ class DashbordController extends Controller
 
         
         $user=Auth::user();
-        // $user->attachRole('admin');
+        // $user->attachRole('candidat');
        
     if ($user->hasRole('admin') ){
         $users = User::whereRoleIs( ['famille','candidat'])->orderBy('id','desc')->paginate("");
