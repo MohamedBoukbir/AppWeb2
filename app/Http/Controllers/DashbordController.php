@@ -24,7 +24,7 @@ class DashbordController extends Controller
         // return view('admin');
     }
     elseif(Auth::user()->hasRole('famille')){
-        return view('famille');
+        return view('front.dashboard-account');
     }elseif(Auth::user()->hasRole('candidat')){
         
         return view('candidat');

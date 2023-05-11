@@ -90,7 +90,7 @@
                                     @csrf
                                     {{-- <fieldset disabled> --}}
                                     <div class="field input-field" style="display: none;">
-                                        <input id="user"  name="user" type="text" class="input text text-muted"  :value="old('{{$user}}')"  value="{{$user}}">
+                                        <input id="user"  name="user" type="text" class="input text text-muted"  value="{{$user}}">
 
                                     </div>
                                   {{-- </fieldset> --}}

@@ -139,7 +139,7 @@
         <style>
             .menu {
                 display: block;
-                position: fixed;
+                position: flex;
                 height: 80px;
                 z-index: 99;
                 width: 100%;
