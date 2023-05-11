@@ -44,6 +44,7 @@ class DashbordController extends Controller
 
   public function userAtacher($user){
     // dd($user);
-    return view('front.signup',compact('user'));
+    session()->put('user',$user);
+    return view('front.signup');
   }
 }
