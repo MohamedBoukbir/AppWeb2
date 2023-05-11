@@ -321,8 +321,8 @@
                                         can contact them.</p>
                                 </div>
                                 <button class="card-button mt-3" type="button"><a
-                                        {{-- href="{{ route('account-souscription') }}">Upgrade to premium </a><i --}}
-                                        href="#">Upgrade to premium </a><i
+                                        href="{{ route('account-souscription') }}">Upgrade to premium </a><i
+                                        {{-- href="#">Upgrade to premium </a><i --}}
                                         class='bx bx-chevron-right align-middle'></i></button>
                             </div>
                         </div>

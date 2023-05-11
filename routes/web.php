@@ -169,3 +169,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth','role:admin']], funct
   Route::resource('staff', StaffController::class);
   // Route::get('/manage', ['middleware' => ['permission:manage-admins'], 'uses' => 'AdminController@manageAdmins']);
 });
+
+Route::get('/souscription', function () {
+  return view('front.souscription');
+})->name('account-souscription');
