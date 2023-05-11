@@ -292,7 +292,7 @@
             <div class="dashboard">
                 <div class="dashboard-card">
                     <div>
-                        <h2 class="dashboard-card-title">Hi {{ __('Username') }},</h2>
+                        <h2 class="dashboard-card-title"> Hi {{Auth::user()->username }}</h2>
                         <p class="dashboard-card-text">
                             {{ __('Welcome to your personal dashboard! Here you can manage your searches and job posting.') }}
                         </p>

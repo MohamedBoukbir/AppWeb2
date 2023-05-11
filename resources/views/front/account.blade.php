@@ -93,18 +93,26 @@
                         {{-- <span>username</span> --}}
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item disabled" href="#">Username</a>
+                        <a class="dropdown-item disabled" href="#">{{Auth::user()->username }}</a>
                         <a class="dropdown-item" href="profile.html"><i data-feather="user" class="mr-1"></i>
                             Profile</a>
                         <a class="dropdown-item" href="settings.html"><i data-feather="settings" class="mr-1"></i>
                             Settings</a>
-                        <a class="dropdown-item" href="login.html" href="{{ route('logout') }}"
+
+
+                        {{-- <a class="dropdown-item" href="login.html" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();"><i
-                                data-feather="log-out" class="mr-1"></i> Logout</a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                data-feather="log-out" class="mr-1"></i> Logout</a> --}}
+
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                            
+                                    <button type="submit"> Logout</button>
+                                </form>     
+                        {{-- <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
-                        </form>
+                        </form> --}}
                     </div>
                 </li>
                 <style>
