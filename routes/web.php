@@ -32,6 +32,11 @@ Route::get('/homehelp/signup', function () {
   return view('front.signup');
 })->name('signup');
 
+Route::get('/homehelp/user', function () {
+  return view('front.selectuser');
+})->name('select-user');
+
+
 Route::get('/homehelp/signin', function () {
   return view('front.signin');
 })->name('signin');
