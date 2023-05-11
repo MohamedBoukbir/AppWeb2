@@ -258,6 +258,7 @@ class AdminController extends Controller
         }
     }
 
+
      /// delete 
      public function destroy(User $user)
      {
