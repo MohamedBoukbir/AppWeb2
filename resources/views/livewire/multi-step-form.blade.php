@@ -1,4 +1,3 @@
-<div>
 <!DOCTYPE html>
 <!--=== Coding by CodingLab | www.codinglabweb.com === -->
 <html lang="en">
@@ -302,25 +301,25 @@
                                 <span class="progress-count">1</span>
                                 <span class="progress-label">Billing Info</span>
                             </li>
-                        <li class="step-wizard-item current-item">
-                            <span class="progress-count ">2</span>
-                            <span class="progress-label">Payment Method</span>
-                        </li>
-                        <li class="step-wizard-item ">
-                            <span class="progress-count">3</span>
-                            <span class="progress-label">Checkout</span>
-                        </li>
-                        <li class="step-wizard-item ">
-                            <span class="progress-count">4</span>
-                            <span class="progress-label">Success</span>
-                        </li>
-                    </ul>
-                </section>
-                {{-- page 1 --}}
-                @if ($currentStep == 1)
-                    <div class="step-one form first">
-                        <div class="details personal">
-                            <span class="title">My Family</span>
+                            <li class="step-wizard-item ">
+                                <span class="progress-count">2</span>
+                                <span class="progress-label">Payment Method</span>
+                            </li>
+                            <li class="step-wizard-item">
+                                <span class="progress-count">3</span>
+                                <span class="progress-label">Checkout</span>
+                            </li>
+                            <li class="step-wizard-item current-item">
+                                <span class="progress-count">4</span>
+                                <span class="progress-label">Success</span>
+                            </li>
+                        </ul>
+                    </section>
+                    {{-- page 1 --}}
+                    @if ($currentStep == 1)
+                        <div class="step-one form first">
+                            <div class="details personal">
+                                <span class="title">My Family</span>
 
                                 <div class="fields" style="width: 99%;">
                                     {{-- <div class="input-field">
@@ -577,6 +576,10 @@
 
                                 </div> --}}
 
+                                <button class="nextBtn">
+                                    <span class="btnText">Next</span>
+                                    <i class="uil uil-navigator"></i>
+                                </button>
                             </div>
                         </div>
                     @endif
@@ -657,25 +660,21 @@
 
                                 <div class="buttons action-buttons d-flex justify-content-between bg-white pt-2 pb-2">
 
-                                    {{-- @if ($currentStep == 1)
+                                    @if ($currentStep == 1)
                                         <div></div>
-                                    @endif --}}
+                                    @endif
 
-                                    @if ($currentStep == 2)
+                                    @if ($currentStep == 2 || $currentStep == 3 || $currentStep == 4)
                                         <button type="button" class="btn btn-md btn-secondary"
                                             wire:click="decreaseStep()">Back</button>
                                     @endif
 
-                                    @if ($currentStep == 1)
+                                    @if ($currentStep == 1 || $currentStep == 2 || $currentStep == 3)
                                         <button type="button" class="btn btn-md btn-success"
                                             wire:click="increaseStep()">Next</button>
                                     @endif
 
-                                    @if ($currentStep == 2)
-                                    {{-- <button class="nextBtn">
-                                        <span class="btnText">Next</span>
-                                        <i class="uil uil-navigator"></i>
-                                    </button> --}}
+                                    @if ($currentStep == 4)
                                         <button type="submit" class="btn btn-md btn-primary">Submit</button>
                                     @endif
 
@@ -729,5 +728,3 @@
     </body>
 
 </html>
-
-</div>

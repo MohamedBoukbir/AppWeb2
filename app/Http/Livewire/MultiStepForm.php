@@ -81,7 +81,7 @@ class MultiStepForm extends Component
     }
 
     public function register(){
-        dd('yes');
+        // dd('yes');
           $this->resetErrorBag();
           if($this->currentStep == 2){
             //   $this->validate([
