@@ -1,3 +1,14 @@
+{{-- @extends('front.account') --}}
+
+{{-- @section('content')
+
+     
+@endsection --}}
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,17 +19,17 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     @livewireStyles
 </head>
-<body>
-
-   <div class="container">
+<body >
+   <livewire:multi-step-form/>
+{{-- 
+<div class="container">
        <div class="row" style="margin-top:50px">
              <div class="col-md-6 offset-md-3">
                  <h1>Multi Step form</h1><hr>
-                 <livewire:multi-step-form/>
              </div>
        </div>
-   </div>
+   </div>  --}}
     
-    @livewireScripts
+@livewireScripts
 </body>
 </html>
