@@ -91,18 +91,18 @@ class MultiStepForm extends Component
         //   $upload_cv = $this->cv->storeAs('students_cvs', $cv_name);
 
         //   if($upload_cv){
-              $values = array(
-                  "firstName"=>$this->first_name,
-                  "lastName"=>$this->last_name,
-                  "address"=>$this->address,
-                  "religion"=>$this->religion,
-                  "phone"=>$this->phone,
-                  "country"=>$this->country,
-                  "social_status"=>$this->social_status,
-                  "domain"=>$this->domain,
-                  "child"=>$this->child,
-                //   "cv"=>$cv_name,
-              );
+            //   $values = array(
+            //       "firstName"=>$this->first_name,
+            //       "lastName"=>$this->last_name,
+            //       "address"=>$this->address,
+            //       "religion"=>$this->religion,
+            //       "phone"=>$this->phone,
+            //       "country"=>$this->country,
+            //       "social_status"=>$this->social_status,
+            //       "domain"=>$this->domain,
+            //       "child"=>$this->child,
+            //     //   "cv"=>$cv_name,
+            //   );
         $user = User::find(Auth::user()->id);
         // dd('nadi');
         $user->firstName =$this->first_name ;
