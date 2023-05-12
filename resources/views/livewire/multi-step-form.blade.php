@@ -1,3 +1,4 @@
+<div>
 <!DOCTYPE html>
 <!--=== Coding by CodingLab | www.codinglabweb.com === -->
 <html lang="en">
@@ -576,10 +577,6 @@
 
                                 </div> --}}
 
-                                <button class="nextBtn">
-                                    <span class="btnText">Next</span>
-                                    <i class="uil uil-navigator"></i>
-                                </button>
                             </div>
                         </div>
                     @endif
@@ -660,21 +657,25 @@
 
                                 <div class="buttons action-buttons d-flex justify-content-between bg-white pt-2 pb-2">
 
-                                    @if ($currentStep == 1)
+                                    {{-- @if ($currentStep == 1)
                                         <div></div>
-                                    @endif
+                                    @endif --}}
 
-                                    @if ($currentStep == 2 || $currentStep == 3 || $currentStep == 4)
+                                    @if ($currentStep == 2)
                                         <button type="button" class="btn btn-md btn-secondary"
                                             wire:click="decreaseStep()">Back</button>
                                     @endif
 
-                                    @if ($currentStep == 1 || $currentStep == 2 || $currentStep == 3)
+                                    @if ($currentStep == 1)
                                         <button type="button" class="btn btn-md btn-success"
                                             wire:click="increaseStep()">Next</button>
                                     @endif
 
-                                    @if ($currentStep == 4)
+                                    @if ($currentStep == 2)
+                                    {{-- <button class="nextBtn">
+                                        <span class="btnText">Next</span>
+                                        <i class="uil uil-navigator"></i>
+                                    </button> --}}
                                         <button type="submit" class="btn btn-md btn-primary">Submit</button>
                                     @endif
 
@@ -728,3 +729,5 @@
     </body>
 
 </html>
+
+</div>
