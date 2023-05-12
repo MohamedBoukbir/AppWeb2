@@ -1,12 +1,14 @@
 <?php
-use App\Http\Controllers\DashbordController;
-use App\Http\Controllers\CandidatController;
-use App\Http\Controllers\staff\StaffController;
+use App\Http\Livewire\Chat\Main;
+use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Chat\CreateChat;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AnnonceController;
 use App\Http\Controllers\FamilleController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CandidatController;
+use App\Http\Controllers\DashbordController;
+use App\Http\Controllers\staff\StaffController;
 
 /*
 |--------------------------------------------------------------------------
@@ -169,6 +171,12 @@ Route::get('/my-account-saves', function () {
 })->name('account-saved-profiles');
 
 
+//////////////////////////message //////////////////////////////////
+Route::get('/users',CreateChat::class)->name('users');
+Route::get('/chat{key?}',Main::class)->name('chat');
+///////////////////////end message ///////////////////////////
+
+
 ////////////////////////////////////////staff ///////////////////////////
 Route::group(['prefix' => 'admin', 'middleware' => ['auth','role:admin']], function() {
   Route::resource('staff', StaffController::class);
@@ -178,3 +186,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth','role:admin']], funct
 Route::get('/souscription', function () {
   return view('front.souscription');
 })->name('account-souscription');
+
+
+//////////////////////end staff ////////////////////////////////////////////

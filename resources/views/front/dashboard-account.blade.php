@@ -297,7 +297,7 @@
                             {{ __('Welcome to your personal dashboard! Here you can manage your searches and job posting.') }}
                         </p>
                     </div>
-
+                    <a href="{{ route('chat') }}">message</a>
                     <div>
                         <h5 class="dashboard-card-subtitle">{{ __('Can we help you?') }}</h5>
                         <div class="dashboard-card-container">
