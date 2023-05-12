@@ -43,6 +43,11 @@ Route::get('/homehelp/signin', function () {
 })->name('signin');
 
 
+Route::get('/find/domestic', function () {
+  return view('front.find-domestics');
+})->name('find-domestics');
+
+
 
 Route::get('/homehelp/user', [DashbordController::class, 'selectUser'])->name('select-user');
 Route::get('/homehelp/{user}', [DashbordController::class, 'userAtacher'])->name('useratacher');

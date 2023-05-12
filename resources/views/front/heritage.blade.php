@@ -29,7 +29,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
-    
+
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> --}}
     {{-- @livewireStyles --}}
 </head>
@@ -51,6 +51,24 @@
                 {{-- <img src="{{ asset('img/big-logo.png') }}" alt="" style="width: 60px;margin-right: 15px;"> --}}
                 <h1 class="m-0 text-muted">HomeHelp</h1>
             </a>
+
+            <style>
+                input[type="text"] {
+                    width: 150%;
+                    height: 50px;
+                    border: 1px solid rgba(235, 236, 241, 1);
+                    padding: 0 30px;
+                    font-size: 15px;
+                    color: #000000;
+                    border-radius: 5px;
+                    margin: 5px;
+                }
+            </style>
+
+            <div class="field input-field">
+
+                <input type="text" placeholder="Find Helper" class="input">
+            </div>
             <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
                 data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -95,7 +113,7 @@
                         {{-- <span>username</span> --}}
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item disabled" href="#">{{Auth::user()->username }}</a>
+                        <a class="dropdown-item disabled" href="#">{{ Auth::user()->username }}</a>
                         <a class="dropdown-item" href="profile.html"><i data-feather="user" class="mr-1"></i>
                             Profile</a>
                         <a class="dropdown-item" href="settings.html"><i data-feather="settings" class="mr-1"></i>
@@ -107,11 +125,11 @@
                                 document.getElementById('logout-form').submit();"><i
                                 data-feather="log-out" class="mr-1"></i> Logout</a> --}}
 
-                                <form method="POST" action="{{ route('logout') }}">
-                                    @csrf
-                            
-                                    <button type="submit"> Logout</button>
-                                </form>     
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                            <button type="submit"> Logout</button>
+                        </form>
                         {{-- <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form> --}}
@@ -150,7 +168,7 @@
             .menu {
                 display: block;
                 position: flex;
-                height: 80px;
+                height: 100px;
                 z-index: 99;
                 width: 100%;
                 border-bottom: 1px solid #dbe5ea;
@@ -159,7 +177,7 @@
             .menu-list {
                 display: flex;
                 padding: 30px 0;
-                margin: auto;
+                margin: 0 30px auto;
                 max-width: 1060px;
                 width: 100%;
             }
@@ -169,10 +187,11 @@
                 font-family: Nunito, Arial, Helvetica, sans-serif;
                 font-size: 14px;
                 line-height: 22px;
-                margin-right: 30px;
+                margin-right: 0px;
                 color: #144862;
                 display: flex;
                 align-items: center;
+                /* background-color:  */
             }
 
             .menu-item-link {
@@ -196,9 +215,10 @@
                 color: #9cb2bd;
             }
 
-            .menu-item-icon,.menu-item-link :hover{
-               
-                color: #144862!important;
+            .menu-item-icon,
+            .menu-item-link :hover {
+
+                color: #144862 !important;
             }
 
             .menu-list-item:last-child {
@@ -213,57 +233,91 @@
         <div class="menu">
             <div class="menu-list">
                 <div class="menu-list-item">
-                    <a href="{{ route('account-dashboard') }}" class="menu-item-link">
-                        <span class="menu-item-icon"><i class='bx bxs-dashboard'></i></span>
-                        {{-- <p class="menu-item-label">Dashboard</p> --}}
-                        @yield('item-list-1')
-                    </a>
+                    <style>
+                        .group-toggler {
+                            display: inline-block;
+                            padding: 10px 20px;
+                            text-align: center;
+                            text-decoration: none;
+                            color: #ffffff;
+                            background-color: #3c5d6e;
+                            border-radius: 6px;
+                            outline: none;
+                            transition: 0.3s;
+                            border: 2px solid transparent;
+                            margin-right: 30px;
+                        }
+
+                        .group-toggler:hover,
+                        .group-toggler:focus {
+                            background-color: #c2c7c7;
+                            border-color: #7aa8b7;
+                        }
+                    </style>
+                    <button type="button" class="group-toggler" data-v-199aad64="">
+                        1
+                        <!---->
+                    </button>
+
                 </div>
 
                 <div class="menu-list-item">
-                    <a href="{{ route('account-applications') }}" class="menu-item-link activated">
-                        <span class="menu-item-icon"><i class='bx bxs-user'></i></span>
-                        {{-- <p class="menu-item-label ">New Applications</p> --}}
-                        @yield('item-list-2')
-                    </a>
+                    <button type="button" class="group-toggler" data-v-199aad64="">
+                        2
+                        <!---->
+                    </button>
                 </div>
-                <div class="menu-list-item">
-                    <a href="{{ route('account-conversation') }}" class="menu-item-link">
-                        <span class="menu-item-icon"><i class='bx bxs-message'></i></span>
-                        {{-- <p class="menu-item-label">Conversations</p> --}}
-                        @yield('item-list-3')
-                    </a>
+               
+
+                <div class="menu-list-item ">
+                    <button type="button" class="group-toggler" data-v-199aad64="">
+                        3
+                        <!---->
+                    </button>
                 </div>
 
                 <div class="menu-list-item ">
-                    <a href="{{ route('account-saved-profiles') }}" class="menu-item-link">
-                        <span class="menu-item-icon "><i class='bx bxs-like'></i></span>
-                        {{-- <p class="menu-item-label">Saved profiles</p> --}}
-                        @yield('item-list-4')
-                    </a>
+                    <button type="button" class="group-toggler" data-v-199aad64="">
+                        4
+                        <!---->
+                    </button>
                 </div>
 
-                <div class="menu-list-item item-search">
+                <div class="menu-list-item ">
+                    <button type="button" class="group-toggler" data-v-199aad64="">
+                        5
+                        <!---->
+                    </button>
+                </div>
+
+                <div class="menu-list-item ">
+                    <button type="button" class="group-toggler" data-v-199aad64="">
+                        6
+                        <!---->
+                    </button>
+                </div>
+
+                {{-- <div class="menu-list-item item-search">
                     <a href="{{ route('find-domestics') }}" class="menu-item-link">
                         <span class="menu-item-icon" style="color: green;"><i class='bx bx-search-alt-2'></i></span>
                         <p class="menu-item-label" style="color: green;">Find Domestic Helpers</p>
                     </a>
-                </div>
+                </div> --}}
 
 
             </div>
         </div>
 
 
-       @yield('content')
-       
+        @yield('content')
+
     </div>
 
 
 
     {{-- @livewireScripts --}}
 
-   
+
 </body>
 
 </html>
