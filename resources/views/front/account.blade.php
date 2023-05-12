@@ -29,7 +29,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> --}}
-    
+    {{-- @livewireStyles --}}
 </head>
 
 <body style="background-color: #FFF">
@@ -259,7 +259,7 @@
 
 
 
-
+    {{-- @livewireScripts --}}
 </body>
 
 </html>

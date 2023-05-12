@@ -286,7 +286,6 @@
         }
     </style>
 
-
     <div class="main-content">
         <div class="dashboard-container">
             <div class="dashboard">

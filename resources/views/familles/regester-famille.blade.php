@@ -14,7 +14,7 @@
        <div class="row" style="margin-top:50px">
              <div class="col-md-6 offset-md-3">
                  <h1>Multi Step form</h1><hr>
-                 @livewire('multi-step-form')
+                 <livewire:multi-step-form/>
              </div>
        </div>
    </div>
