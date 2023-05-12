@@ -21,7 +21,7 @@ class MultiStepForm extends Component
     public $child;
     public $social_status;
 
-    public $totalSteps = 4;
+    public $totalSteps = 2;
     public $currentStep = 1;
 
 
@@ -36,6 +36,7 @@ class MultiStepForm extends Component
     }
 
     public function increaseStep(){
+        // dd('yes');
         $this->resetErrorBag();
         $this->validateData();
          $this->currentStep++;
@@ -45,6 +46,7 @@ class MultiStepForm extends Component
     }
 
     public function decreaseStep(){
+        // dd('yes');
         $this->resetErrorBag();
         $this->currentStep--;
         if($this->currentStep < 1){
@@ -53,7 +55,7 @@ class MultiStepForm extends Component
     }
 
     public function validateData(){
-
+        // dd('yes');
         if($this->currentStep == 1){
             $this->validate([
                 'first_name'=>'required|string',
@@ -70,17 +72,18 @@ class MultiStepForm extends Component
                  'city'=>'required'
               ]);
         }
-        elseif($this->currentStep == 3){
-              $this->validate([
-                  'domain'=>'required',
-                  'address'=>'required'
-              ]);
-        }
+        // elseif($this->currentStep == 3){
+        //       $this->validate([
+        //           'domain'=>'required',
+        //           'address'=>'required'
+        //       ]);
+        // }
     }
 
     public function register(){
+        dd('yes');
           $this->resetErrorBag();
-          if($this->currentStep == 4){
+          if($this->currentStep == 2){
             //   $this->validate([
             //     //   'cv'=>'required|mimes:doc,docx,pdf|max:1024',
             //       'terms'=>'accepted'
